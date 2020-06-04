@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema();
+const Validation = require('../validations/validation');
 
-
-const PersonSchema = new Schema({
+const PersonSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -14,7 +14,8 @@ const PersonSchema = new Schema({
         trim: true,
     },
     secretFriend: {
-        type: Schema.Types.ObjectId, ref: 'Person'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Person',
     }
 });
 
