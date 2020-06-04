@@ -1,59 +1,43 @@
 class GenericController {
     constructor() { }
 
-    async post(repository, validation, data) {
+    async post(repository, data) {
         try {
-            if (!validation.isValid()) {
-                return {
-                    message: 'Existem dados inválidos na sua requisição',
-                    validation: validation.erros()
-                };
-            }
             return await repository.create(data);
         } catch (error) {
-            return { message: `Erro no processamento: ${error}` };
+            return { message: `Error: ${error}` };
         }
     }
 
-    async getAll(repository, validation) {
+    async put(repository, data, id) {
         try {
-            if (!validation.isValid()) {
-                return {
-                    message: 'Existem dados inválidos na sua requisição',
-                    validation: validation.erros()
-                };
-            }
+            return await repository.update(data, id);
+        } catch (error) {
+            return { message: `Error: ${error}` };
+        }
+    }
+
+    async getAll(repository) {
+        try {
             return await repository.getAll();
         } catch (error) {
-            return { message: `Erro no processamento: ${error}` };
+            return { message: `Error: ${error}` };
         }
     }
 
-    async getById(repository, validation, id) {
+    async getById(repository, id) {
         try {
-            if (!validation.isValid()) {
-                return {
-                    message: 'Existem dados inválidos na sua requisição',
-                    validation: validation.errors()
-                }
-            }
             return await repository.getById(id);
         } catch (error) {
-            return { message: `Erro no processamento: ${error}` };
+            return { message: `Error: ${error}` };
         }
     }
 
-    async delete(repository, validation, id) {
+    async delete(repository, id) {
         try {
-            if (!validation.isValid()) {
-                return {
-                    message: 'Existem dados inválidos na sua requisição',
-                    validation: validation.errors()
-                }
-            }
             return await repository.delete(id);
         } catch (error) {
-            return { message: `Erro no processamento: ${error}` };
+            return { message: `Error: ${error}` };
         }
     }
 };
