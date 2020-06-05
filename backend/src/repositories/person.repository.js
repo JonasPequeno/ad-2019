@@ -1,33 +1,30 @@
-require('../models/person.model');
-const _model = 'Person';
-const GenericRepository = require('./generic/generic.repository');
-_generic = new GenericRepository(_model);
+const PersonModel = require('../models/person.model');
 
 class PersonRepository {
-    constructor() {
+
+    constructor(model) {
     };
 
     async create(data) {
-        return await _generic.create(data);
+        let model = new PersonModel(data);
+        return model.save();
     };
-    async getById(id) {
-        return await _generic.getById(id);
-    };
-    async update(id, data) {
-        return await _generic.update(id, data);
-    };
+
     async getAll() {
-        return await _generic.getAll();
+        return PersonModel.find().lean();
+    }
+
+    async getById(id) {
+        return PersonModel.findById(id);
     };
+
+    async update(id, data) {
+        return PersonModel.findByIdAndUpdate(id, { $set: { ...data } });
+    };
+
+
     async delete(id) {
-        return await _generic.delete(id);
-    };
-    async getFriends() {
-        _generic._model.find({}, 'name email');
-    };
-    async getFriendsByName(name) {
-        _generic._model.find({})
-            .populate('secretFriend', 'name');
+        return PersonModel.findByIdAndRemove(id);
     };
 };
 
