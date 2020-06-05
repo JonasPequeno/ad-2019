@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  url_base: "https://ad2019-backend.herokuapp.com/api"
 };
+
