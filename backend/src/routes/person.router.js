@@ -4,6 +4,7 @@ const controller = require('../controllers/person.controller');
 
 const erroMiddleware = require('../middleware/error.middleware');
 const personValidation = require('../validations/person.validation');
+const emailService = require('../services/email/email.service')
 
 let _ctrl = new controller();
 
@@ -26,5 +27,4 @@ router.put('/:id',
 router.delete('/:id',
     _ctrl.delete
 );
-
 module.exports = router;
