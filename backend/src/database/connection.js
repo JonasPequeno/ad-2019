@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const URL_BASE = 'mongodb://admin:admin1230@ds341825.mlab.com:41825/ad-2019';
+const URL_BASE = process.env.MONGO_URL;
 
 mongoose.connect(
     URL_BASE,

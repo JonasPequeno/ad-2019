@@ -1,11 +1,11 @@
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey('');
+sgMail.setApiKey(process.env.KEY_SENDGRID);
 
 
 exports.sendEmail = (personName, to, friendName) => {
     const msg = {
         to,
-        from: 'jonaspdasilva31@gmail.com',
+        from: 'amigo.secreto.ad2019@gmail.com',
         subject: 'Amigo secreto',
         text: 'Amigo secreto - ad-2019',
         html: `           
