@@ -24,4 +24,4 @@ Instruções para execução dos projetos
 O backend e o frontend estão disponíveis no **Heroku**
 
 * [frontend](https://ad2019-frontend.herokuapp.com/)	
-* [backend](https://ad2019-backend.herokuapp.com/person)	
+* [backend](https://ad2019-backend.herokuapp.com/api/person)	
