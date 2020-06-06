@@ -5,7 +5,7 @@ sgMail.setApiKey(process.env.KEY_SENDGRID);
 exports.sendEmail = (personName, to, friendName) => {
     const msg = {
         to,
-        from: 'amigo.secreto.ad2019@gmail.com',
+        from: 'jonaspdasilva31@gmail.com',
         subject: 'Amigo secreto',
         text: 'Amigo secreto - ad-2019',
         html: `           
