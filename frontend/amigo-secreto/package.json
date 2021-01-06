@@ -27,7 +27,7 @@
     "@angular/router": "~9.1.9",
     "@ng-bootstrap/ng-bootstrap": "^6.1.0",
     "angular-strap": "^2.3.12",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.0",
     "express": "^4.17.1",
     "rxjs": "~6.5.4",
